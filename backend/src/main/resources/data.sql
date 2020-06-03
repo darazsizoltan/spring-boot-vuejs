@@ -1,20 +1,21 @@
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS delay;
 
-CREATE TABLE users (
-  id INT AUTO_INCREMENT  PRIMARY KEY,
-  first_name VARCHAR(250) NOT NULL,
-  last_name VARCHAR(250) NOT NULL
-);
 
-CREATE TABLE lateness (
+
+CREATE TABLE delay (
   id INT AUTO_INCREMENT  PRIMARY KEY,
-  fk_user_id INT NOT NULL,
-  minutes NUMERIC NOT NULL
+  name VARCHAR (250) NOT NULL,
+  minutes NUMERIC NOT NULL,
+  delay_date DATE NOT NULL
 );
 
 
-INSERT INTO users (first_name, last_name) VALUES
-  ('Teszt', 'Adat'),
-  ('Teszt', 'Adat2'),
-  ('Teszt', 'Adat3'),
-  ('Teszt', 'Adat4');
+-- INSERT INTO delay (name, minutes, delay_date) VALUES
+-- ('kiskutya', 4, CURRENT_DATE ),
+-- ('kiskutya', 5, CURRENT_DATE ),
+-- ('kiskutya', 6, CURRENT_DATE ),
+-- ('kiskutya', 7, CURRENT_DATE ),
+-- ('kiscica', 4, CURRENT_DATE ),
+-- ('kiscica', 22, CURRENT_DATE ),
+-- ('kiscica', 6, CURRENT_DATE ),
+-- ('kiscica', 4, CURRENT_DATE );

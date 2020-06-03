@@ -13,8 +13,8 @@ export default {
     getUser(userId) {
         return AXIOS.get(`/user/` + userId);
     },
-    createUser(firstName, lastName) {
-        return AXIOS.post(`/user/` + firstName + '/' + lastName);
+    createUser(payload) {
+        return AXIOS.post("/delay", payload);
     },
     getSecured(user, password) {
         return AXIOS.get(`/secured/`,{
@@ -22,6 +22,12 @@ export default {
                 username: user,
                 password: password
             }});
+    },
+    getDelays(){
+        return AXIOS.get(`/delays`);
+    },
+    getRanking(){
+        return AXIOS.get(`/ranking`);
     }
 }
 

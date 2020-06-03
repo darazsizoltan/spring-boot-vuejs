@@ -15,7 +15,7 @@
 [![Deployed on Heroku](https://img.shields.io/badge/heroku-deployed-blueviolet.svg?logo=heroku)](https://spring-boot-vuejs.herokuapp.com/)
 [![Pushed to Docker Hub](https://img.shields.io/badge/docker_hub-released-blue.svg?logo=docker)](https://hub.docker.com/r/jonashackt/spring-boot-vuejs)
     
-> **If you´re a JavaMagazin / blog.codecentric.de / Softwerker reader**, consider switching to [vue-cli-v2-webpack-v3](https://github.com/jonashackt/spring-boot-vuejs/tree/vue-cli-v2-webpack-v3)
+> **If you´re a JavaMagazin / blog.codecentric.eu / Softwerker reader**, consider switching to [vue-cli-v2-webpack-v3](https://github.com/jonashackt/spring-boot-vuejs/tree/vue-cli-v2-webpack-v3)
 
 ![localhost-first-run](screenshots/localhost-first-run.png)
 
@@ -27,7 +27,7 @@ This project is used as example in a variety of articles & as eBook:
 [![entwickler-press-092018](screenshots/entwickler-press-092018.jpg)](https://www.amazon.com/Vue-js-f%C3%BCr-alle-Wissenswertes-Einsteiger-ebook/dp/B07HQF9VX4/ref=sr_1_1?ie=UTF8&qid=1538484852&sr=8-1&keywords=Vue-js-f%C3%BCr-alle-Wissenswertes-Einsteiger-ebook)
 [![softwerker-vol12](screenshots/softwerker-vol12.png)](https://info.codecentric.de/softwerker-vol-12)
 
-[blog.codecentric.de/en/2018/04/spring-boot-vuejs](https://blog.codecentric.de/en/2018/04/spring-boot-vuejs) | [JavaMagazin 8.2018](https://jaxenter.de/ausgaben/java-magazin-8-18) | [entwickler.press shortcuts 229](https://www.amazon.com/Vue-js-f%C3%BCr-alle-Wissenswertes-Einsteiger-ebook/dp/B07HQF9VX4/ref=sr_1_1?ie=UTF8&qid=1538484852&sr=8-1&keywords=Vue-js-f%C3%BCr-alle-Wissenswertes-Einsteiger-ebook) | [softwerker Vol.12](https://info.codecentric.de/softwerker-vol-12)
+[blog.codecentric.eu/en/2018/04/spring-boot-vuejs](https://blog.codecentric.de/en/2018/04/spring-boot-vuejs) | [JavaMagazin 8.2018](https://jaxenter.de/ausgaben/java-magazin-8-18) | [entwickler.press shortcuts 229](https://www.amazon.com/Vue-js-f%C3%BCr-alle-Wissenswertes-Einsteiger-ebook/dp/B07HQF9VX4/ref=sr_1_1?ie=UTF8&qid=1538484852&sr=8-1&keywords=Vue-js-f%C3%BCr-alle-Wissenswertes-Einsteiger-ebook) | [softwerker Vol.12](https://info.codecentric.de/softwerker-vol-12)
 
 ## Table of Contents  
 * [In Search of a new Web Frontend-Framework after 2 Years of absence...](#in-search-of-a-new-web-frontend-framework-after-2-years-of-absence)
@@ -601,9 +601,9 @@ Mind the addition to the backend's [pom.xml](backend/pom.xml) described here: ht
 Now you're able to use Spring Data's magic - all you need is an Interface like [UserRepository.java](backend/src/main/java/de/jonashackt/springbootvuejs/repository/UserRepository.java):
 
 ```java
-package de.jonashackt.springbootvuejs.repository;
+package eu.pontsytems.springbootvuejs.repository;
 
-import de.jonashackt.springbootvuejs.domain.User;
+import eu.pontsytems.springbootvuejs.domain.UserBase;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
@@ -622,9 +622,9 @@ public interface UserRepository extends CrudRepository<User, Long> {
 Now write your Testcases accordingly like [UserRepositoryTest.java](backend/src/test/java/de/jonashackt/springbootvuejs/repository/UserRepositoryTest.java):
 
 ```java
-package de.jonashackt.springbootvuejs.repository;
+package eu.pontsytems.springbootvuejs.repository;
 
-import de.jonashackt.springbootvuejs.domain.User;
+import eu.pontsytems.springbootvuejs.domain.UserBase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -787,7 +787,7 @@ https://github.com/vuejs/vue-test-utils
 
 Jest is a new shooting star in the sky of JavaScript testing frameworks: https://facebook.github.io/jest/
 
-Intro-Blogpost: https://blog.codecentric.de/2017/06/javascript-unit-tests-sind-schwer-aufzusetzen-keep-calm-use-jest/
+Intro-Blogpost: https://blog.codecentric.eu/2017/06/javascript-unit-tests-sind-schwer-aufzusetzen-keep-calm-use-jest/
 
 Examples: https://github.com/vuejs/vue-test-utils-jest-example
 
@@ -1424,7 +1424,7 @@ With Spring it is relatively easy to secure our API. Let's add `spring-boot-star
 Also create a new @Configuration annotated class called [WebSecurityConfiguration.class](backend/src/main/java/de/jonashackt/springbootvuejs/configuration/WebSecurityConfiguration.java):
 
 ```java
-package de.jonashackt.springbootvuejs.configuration;
+package eu.pontsytems.springbootvuejs.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;

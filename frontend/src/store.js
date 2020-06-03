@@ -9,7 +9,8 @@ export default new Vuex.Store({
         loginSuccess: false,
         loginError: false,
         userName: null,
-        userPass: null
+        userPass: null,
+        lates: []
     },
     mutations: {
         login_success(state, payload){
@@ -20,6 +21,9 @@ export default new Vuex.Store({
         login_error(state, payload){
             state.loginError = true;
             state.userName = payload.userName;
+        },
+        setLates(state, lates){
+            state.lates = lates;
         }
     },
     actions: {
@@ -48,12 +52,24 @@ export default new Vuex.Store({
                         reject("Invalid credentials!")
                     })
             })
+        },
+        getDelays({commit}) {
+            api.getDelays()
+                .then(res => commit('setLates', res.data))
+                .catch(err => console.log(err))
+        },
+        getRankings({commit}){
+            api.getRanking()
+                .then(res => commit('setLates', res.data))
+                .catch(err => console.log(err))
         }
-    },
+    }
+    ,
     getters: {
         isLoggedIn: state => state.loginSuccess,
         hasLoginErrored: state => state.loginError,
         getUserName: state => state.userName,
-        getUserPass: state => state.userPass
+        getUserPass: state => state.userPass,
+        getLates: state => state.lates
     }
 })
